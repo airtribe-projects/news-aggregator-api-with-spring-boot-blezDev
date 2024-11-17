@@ -176,3 +176,5 @@ This repository contains a RESTful API service for user authentication, preferen
     ],
     "status": "string"
   }
+
+---
