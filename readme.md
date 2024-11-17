@@ -1,6 +1,7 @@
 # News API Service
 
-This repository contains a RESTful API service for user authentication, preferences management, and fetching news. The API supports operations like user login, registration, updating preferences, retrieving news, and managing news history.
+This repository contains a RESTful API service for user authentication, preferences management, and fetching news. The
+API supports operations like user login, registration, updating preferences, retrieving news, and managing news history.
 
 ---
 
@@ -33,6 +34,7 @@ This repository contains a RESTful API service for user authentication, preferen
 ### Authentication
 
 #### 1. **Login**
+
 - **Endpoint**: `/api/login`
 - **Method**: `POST`
 - **Request Body**:
@@ -41,14 +43,14 @@ This repository contains a RESTful API service for user authentication, preferen
     "username": "string",
     "password": "string"
   }
-
 - **Response**:
   ```json
   {
     token : "string"
   }
-  
+
 #### 2. **Register**
+
 - **Endpoint**: `/api/register`
 - **Method**: `POST`
 - **Request Body**:
@@ -66,41 +68,43 @@ This repository contains a RESTful API service for user authentication, preferen
   } 
 
 ### Preferences
-- **Endpoint**: `/api/preferences`
-- **Method**: `GET`
-- **Request Body**:
-  ```json
-  {
-    "username": "string",
-    "password": "string",
-    "email": "string"
-  }
 
+- **Endpoint**: `/api/preferences/{userId}`
+- **Method**: `GET`
 - **Response**:
   ```json
-  {
-   "User registered successfully"
-  } 
+   {
+  "prefId": "string",
+  "topic": "string",
+  "country": "string",
+  "language": "string",
+  "domain": "string",
+  "category": "string"
+  }
+
 
 ### Preferences
+
 - **Endpoint**: `/api/preferences`
 - **Method**: `PUT`
 - **Request Body**:
   ```json
   {
-    "username": "string",
-    "password": "string",
-    "email": "string"
+  "userId": "string",
+  "topic": "string",
+  "country": "string",
+  "language": "string",
+  "domain": "string",
+  "category": "string"
   }
-
 - **Response**:
   ```json
-  {
-   "User registered successfully"
-  } 
-
+   {
+  "Preferences Updated Successfully"
+  }
 
 ### News
+
 - **Endpoint**: `/api/news/{userId}`
 - **Method**: `GET`
 
@@ -127,6 +131,7 @@ This repository contains a RESTful API service for user authentication, preferen
   } 
 
 ### News Read
+
 - **Endpoint**: `/api/news/read/{userId}`
 - **Method**: `GET`
 - **Response**:
@@ -153,6 +158,7 @@ This repository contains a RESTful API service for user authentication, preferen
   }
 
 ### News Search
+
 - **Endpoint**: `/api/news/search/{search}/{userId}`
 - **Method**: `GET`
 - **Response**:
